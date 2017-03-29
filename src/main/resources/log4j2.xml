@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Appenders>
+		<Console name="console" target="SYSTEM_OUT">
+			<PatternLayout pattern="[%-5p] %d: %m ( %l) [%t] %3x%n" /><!-- 
+				%d %-5p %C{2} (%F:%L) - %m%n -->
+		</Console>
+
+		<File name="logfile" fileName="trafficanalysis.log" append="true">
+			<PatternLayout pattern="[%-5p] %d: %m ( %l) [%t] %3x%n" />
+		</File>
+	</Appenders>
+
+	<Loggers>
+		<Logger name="de.bfft" level="INFO" additivity="false">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="logfile" />
+		</Logger>
+
+		<Root level="info">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="logfile" />
+		</Root>
+	</Loggers>
+</Configuration>
